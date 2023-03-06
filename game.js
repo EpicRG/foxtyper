@@ -179,7 +179,7 @@ function finishGame() {
 }
 
 document.addEventListener('keydown', function(event) {
-  if (event.code == tab) {
+  if (event.code == 9) {
      startGame();
   }
 });
