@@ -1,5 +1,5 @@
 body {
-    background-color: #fe9801;
+    background-color: #252725;
     color: black;
     text-align: center;
     }
@@ -23,13 +23,13 @@ body {
     
     .timer, .errors, .accuracy,
     .cpm, .wpm {
-    background-color: #ccda46;
+    background-color: #cbda4600;
     height: 60px;
     width: 70px;
     margin: 8px;
     padding: 12px;
     border-radius: 20%;
-    box-shadow: black 5px 8px 5px;
+    /*box-shadow: black 5px 8px 5px;*/
     }
     
     .cpm, .wpm {
