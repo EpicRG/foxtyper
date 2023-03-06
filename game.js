@@ -177,3 +177,9 @@ function finishGame() {
   cpm_group.style.display = "block";
   wpm_group.style.display = "block";
 }
+
+document.addEventListener('keydown', function(event) {
+  if (event.code == tab) {
+     startGame();
+  }
+});
