@@ -1,5 +1,5 @@
 // define the time limit
-let TIME_LIMIT = 60;
+let TIME_LIMIT = 30;
 
 // define quotes to be used
 let quotes_array = [
@@ -24,6 +24,7 @@ let cpm_group = document.querySelector(".cpm");
 let wpm_group = document.querySelector(".wpm");
 let error_group = document.querySelector(".errors");
 let accuracy_group = document.querySelector(".accuracy");
+let countdownTimer = document.querySelector(".countdownTimer")
 
 let timeLeft = TIME_LIMIT;
 let timeElapsed = 0;
@@ -34,6 +35,7 @@ let characterTyped = 0;
 let current_quote = "";
 let quoteNo = 0;
 let timer = null;
+let isGameRunning = false;
 
 function updateQuote() {
   quote_text.textContent = null;
@@ -110,10 +112,12 @@ function processCurrentText() {
 function startGame() {
   resetValues();
   updateQuote();
-
+  isGameRunning = true;
+  
   // clear old and start a new timer
   clearInterval(timer);
   timer = setInterval(updateTimer, 1000);
+
 }
 
 function resetValues() {
@@ -176,4 +180,39 @@ function finishGame() {
   // display the cpm and wpm
   cpm_group.style.display = "block";
   wpm_group.style.display = "block";
+
+  isGameRunning = false;
 }
+
+function startTimer(seconds){
+  let counter = seconds;
+
+  const interval = setInterval(() => {
+    console.log(counter);
+    counter--;
+
+    if (counter < 0){
+      clearInterval(interval);
+      console.log('start');
+      startGame();
+    }
+
+    const timerSpan = document.getElementById('countdownTimer');
+    timerSpan.innerText = counter + 1;
+    if(counter == -1){
+      timerSpan.innerText = "Start Typing!";
+      setTimeout(() => {timerSpan.innerText = "";}, 1000);
+    }
+    
+
+  }, 1000);
+}
+
+document.addEventListener('keydown', function(event){
+  if(!isGameRunning){
+    if (event.code = 32){
+      startTimer(3);
+    }
+  } else return;
+    
+});

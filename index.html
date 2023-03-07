@@ -25,7 +25,7 @@
 	</div>
 	<div class="timer">
 		<div class="header_text">Time</div>
-		<div class="curr_time">60s</div>
+		<div class="curr_time">30s</div>
 	</div>
 	<div class="accuracy">
 		<div class="header_text">% Accuracy</div>
@@ -34,15 +34,16 @@
 	</div>
 
 	<div class="quote">
-	Click on the area below to start
+	Press 'Space' to start
 	</div>
+	<div id="countdownTimer"></div>
 	<textarea class="input_area"
 	placeholder="start typing here..."
 	oninput="processCurrentText()"
-	onfocus="startGame()">
+ 	autofocus>
 	</textarea>
 	<button class="restart_btn"
-	onclick="resetValues()">
+	onclick="startTimer(3)">
 	Restart
 	</button>
 </div>
