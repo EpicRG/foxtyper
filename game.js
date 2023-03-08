@@ -61,7 +61,7 @@ function updateQuote() {
 
   // separate each character and make an element
   // out of each of them to individually style them
-  wo.split("").forEach((char) => {
+  current_quote.split("").forEach((char) => {
     const charSpan = document.createElement("span");
     charSpan.innerText = char;
     quote_text.appendChild(charSpan);
