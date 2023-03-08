@@ -11,6 +11,24 @@ let quotes_array = [
   "The only way to do great work is to love what you do.",
 ];
 
+let words = [];
+
+// Fetch words from words.txt file
+fetch("src/words.txt")
+  .then(response => response.text())
+  .then(data => {
+    // Split data by ", " to get individual words
+    words = data.split(", ");
+  })
+  .catch(error => {
+    console.error("Error fetching words:", error);
+  });
+
+  // Get random word from words array
+  function getRandomWord() {
+    return words[Math.floor(Math.random() * words.length)];
+  }
+
 // selecting required elements
 let timer_text = document.querySelector(".curr_time");
 let accuracy_text = document.querySelector(".curr_accuracy");
@@ -43,7 +61,7 @@ function updateQuote() {
 
   // separate each character and make an element
   // out of each of them to individually style them
-  current_quote.split("").forEach((char) => {
+  wo.split("").forEach((char) => {
     const charSpan = document.createElement("span");
     charSpan.innerText = char;
     quote_text.appendChild(charSpan);
@@ -138,6 +156,8 @@ function resetValues() {
   restart_btn.style.display = "none";
   cpm_group.style.display = "none";
   wpm_group.style.display = "none";
+
+  input_area.focus();
 }
 
 function updateTimer() {
