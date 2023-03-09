@@ -3,12 +3,12 @@ let TIME_LIMIT = 30;
 
 // define quotes to be used
 let quotes_array = [
-  "Push yourself, because no one else is going to do it for you.",
-  "Failure is the condiment that gives success its flavor.",
-  "Wake up with determination. Go to bed with satisfaction.",
-  "It's going to be hard, but hard does not mean impossible.",
-  "Learning never exhausts the mind.",
-  "The only way to do great work is to love what you do.",
+  // "Push yourself, because no one else is going to do it for you.",
+  // "Failure is the condiment that gives success its flavor.",
+  // "Wake up with determination. Go to bed with satisfaction.",
+  // "It's going to be hard, but hard does not mean impossible.",
+  // "Learning never exhausts the mind.",
+  // "The only way to do great work is to love what you do.",
 ];
 
 let words = [];
@@ -54,11 +54,44 @@ let current_quote = "";
 let quoteNo = 0;
 let timer = null;
 let isGameRunning = false;
+let isGameStarting = false;
 
 function updateQuote() {
-  quote_text.textContent = null;
-  current_quote = quotes_array[quoteNo];
+  // quote_text.textContent = null;
+  // current_quote = quotes_array[quoteNo];
 
+  // // separate each character and make an element
+  // // out of each of them to individually style them
+  // current_quote.split("").forEach((char) => {
+  //   const charSpan = document.createElement("span");
+  //   charSpan.innerText = char;
+  //   quote_text.appendChild(charSpan);
+  // });
+
+  // // roll over to the first quote
+  // if (quoteNo < quotes_array.length - 1) quoteNo++;
+  // else quoteNo = 0;
+
+  // quote_text.textContent = null;
+  // current_quote = getRandomWord();
+
+  // // separate each character and make an element
+  // // out of each of them to individually style them
+  // current_quote.split("").forEach((char) => {
+  //   const charSpan = document.createElement("span");
+  //   charSpan.innerText = char;
+  //   quote_text.appendChild(charSpan);
+  // });
+
+  quote_text.textContent = null;
+  
+  // Generate three random words and concatenate them
+  let quoteWords = [];
+  for (let i = 0; i < 5; i++) {
+    quoteWords.push(getRandomWord());
+  }
+  current_quote = quoteWords.join(" ");
+  
   // separate each character and make an element
   // out of each of them to individually style them
   current_quote.split("").forEach((char) => {
@@ -205,6 +238,7 @@ function finishGame() {
 }
 
 function startTimer(seconds){
+  isGameStarting = true;
   let counter = seconds;
 
   const interval = setInterval(() => {
@@ -214,6 +248,7 @@ function startTimer(seconds){
     if (counter < 0){
       clearInterval(interval);
       console.log('start');
+      isGameStarting = false;
       startGame();
     }
 
@@ -228,11 +263,13 @@ function startTimer(seconds){
   }, 1000);
 }
 
-document.addEventListener('keydown', function(event){
+if (!isGameStarting){
+  document.addEventListener('keydown', function(event){
   if(!isGameRunning){
     if (event.code = 32){
+      console.log("Space has been pressed");
       startTimer(3);
     }
-  } else return;
+  }
     
-});
+});}
