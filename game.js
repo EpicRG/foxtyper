@@ -18,7 +18,7 @@ fetch("src/words.txt")
   .then(response => response.text())
   .then(data => {
     // Split data by ", " to get individual words
-    words = data.split(", ");
+    words = data.split(",");
   })
   .catch(error => {
     console.error("Error fetching words:", error);
