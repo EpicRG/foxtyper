@@ -1,7 +1,7 @@
 @font-face{font-family: 'Roboto Mono';src:url('fonts/RobotoMono-VariableFont_wght.ttf')}
 
 body {
-    background-color: #323437;
+    background-color: #333a45;
     color: #f44c7f;
     text-align: center;
     font-family: 'Roboto Mono';
@@ -26,7 +26,7 @@ body {
     
     .timer, .errors, .accuracy,
     .cpm, .wpm {
-    background-color: #cbda4600;
+    background-color: #333a45;
     height: 60px;
     width: 70px;
     margin: 8px;
@@ -52,8 +52,8 @@ body {
     }
     
     .quote {
-    background-color: #cbda4600;
-    color: #646669;
+    background-color: #333a45;
+    color: #939eae;
     font-size: 1.5rem;
     margin: 10px;
     padding: 25px;
@@ -61,7 +61,7 @@ body {
     }
     
     .input_area {
-    background-color: #f5f5c600;
+    background-color: #333a45;
     height: 80px;
     width: 40%;
     font-size: 1.5rem;
