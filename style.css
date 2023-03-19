@@ -2,7 +2,7 @@
 
 body {
     background-color: #323437;
-    color: #e2b714;
+    color: #f44c7f;
     text-align: center;
     font-family: 'Roboto Mono';
     }
@@ -16,7 +16,7 @@ body {
     .heading {
     margin-bottom: 20px;
     font-size: 3rem;
-    color: #e2b714;
+    color: #f44c7f;
     }
     
     .header {
@@ -75,7 +75,7 @@ body {
     
     .restart_btn {
     display: none;
-    background-color: #e2b714;
+    background-color: #f44c7f;
     font-size: 1.5rem;
     padding: 10px;
     border: 0px;
