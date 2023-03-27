@@ -47,6 +47,10 @@ function updateQuote() {
     quote_text.appendChild(charSpan);
   });
 
+  const lastCharSpan = document.createElement("span");
+  lastCharSpan.innerText = " ";
+  quote_text.appendChild(lastCharSpan);
+
   // roll over to the first quote
   if (quoteNo < quotes_array.length - 1) quoteNo++;
   else quoteNo = 0;
