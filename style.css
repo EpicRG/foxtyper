@@ -1,8 +1,8 @@
 @font-face{font-family: 'Roboto Mono';src:url('fonts/RobotoMono-VariableFont_wght.ttf')}
 
 body {
-    background-color: #323437;
-    color: #e2b714;
+    background-color: #333a45;
+    color: #f44c7f;
     text-align: center;
     font-family: 'Roboto Mono';
     }
@@ -16,7 +16,7 @@ body {
     .heading {
     margin-bottom: 20px;
     font-size: 3rem;
-    color: #e2b714;
+    color: #f44c7f;
     }
     
     .header {
@@ -26,7 +26,7 @@ body {
     
     .timer, .errors, .accuracy,
     .cpm, .wpm {
-    background-color: #cbda4600;
+    background-color: #333a45;
     height: 60px;
     width: 70px;
     margin: 8px;
@@ -52,8 +52,8 @@ body {
     }
     
     .quote {
-    background-color: #cbda4600;
-    color: #646669;
+    background-color: #333a45;
+    color: #939eae;
     font-size: 1.5rem;
     margin: 10px;
     padding: 25px;
@@ -61,7 +61,7 @@ body {
     }
     
     .input_area {
-    background-color: #f5f5c600;
+    background-color: #333a45;
     height: 80px;
     width: 40%;
     font-size: 1.5rem;
@@ -75,7 +75,7 @@ body {
     
     .restart_btn {
     display: none;
-    background-color: #e2b714;
+    background-color: #f44c7f;
     font-size: 1.5rem;
     padding: 10px;
     border: 0px;
@@ -92,4 +92,16 @@ body {
     .correct_char {
     color: #d1d0c5;
     }
+
+    #countdown {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        display: inline-block;
+        transform: translate(-50%, -50%);
+        transition: 1s;
+        font-size: 0vw;
+        opacity: 50%;
+        color: #040; 
+      }
     
