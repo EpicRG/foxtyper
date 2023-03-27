@@ -66,10 +66,6 @@ function updateQuote() {
   }
   current_quote = quoteWords.join(" ");
 
-  const lastCharSpan = document.createElement("span");
-  lastCharSpan.innerText = " ";
-  quote_text.appendChild(lastCharSpan);
-  
   current_quote.split("").forEach((char) => {
     const charSpan = document.createElement("span");
     charSpan.innerText = char;
