@@ -1,49 +1,51 @@
 <html lang="en">
-<head>
-	<title>FoxType</title>
-	<!-- links -->
-	<link rel="stylesheet" href="style.css">
-	<link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet' type="text/css">
-</head>
-<body>
-<div class="container">
-	<div class="heading">
-	Foxtype
-	</div>
-	<div class="header">
-	<div class="wpm">
-		<div class="header_text">WPM</div>
-		<div class="curr_wpm">100</div>
-	</div>
-	<div class="cpm">
-		<div class="header_text">CPM</div>
-		<div class="curr_cpm">100</div>
-	</div>
-	<div class="errors">
-		<div class="header_text">Errors</div>
-		<div class="curr_errors">0</div>
-	</div>
-	<div class="timer">
-		<div class="header_text">Time</div>
-		<div class="curr_time">30s</div>
-	</div>
-	<div class="accuracy">
-		<div class="header_text">% Accuracy</div>
-		<div class="curr_accuracy">100</div>
-	</div>
-	</div>
+  <head>
+    <title>FoxType</title>
+    <!-- links -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto Mono"
+      rel="stylesheet"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">Foxtype</div>
+      <div class="header">
+        <div class="wpm">
+          <div class="header_text">WPM</div>
+          <div class="curr_wpm">100</div>
+        </div>
+        <div class="cpm">
+          <div class="header_text">CPM</div>
+          <div class="curr_cpm">100</div>
+        </div>
+        <div class="errors">
+          <div class="header_text">Errors</div>
+          <div class="curr_errors">0</div>
+        </div>
+        <div class="timer">
+          <div class="header_text">Time</div>
+          <div class="curr_time">30s</div>
+        </div>
+        <div class="accuracy">
+          <div class="header_text">% Accuracy</div>
+          <div class="curr_accuracy">100</div>
+        </div>
+      </div>
 
-	<div class="quote">
-	Press 'Space' to start
-	</div>
-	<div id="countdownTimer"></div>
-	<input type="text" class="input_area" autofocus oninput="processCurrentText()"> 
-	<button class="restart_btn"
-	onclick="startTimer(3)">
-	Restart
-	</button>
-</div>
+      <div class="quote">Press 'Space' to start</div>
+      <div id="countdownTimer"></div>
+      <input
+        type="text"
+        class="input_area"
+        autofocus
+        oninput="processCurrentText()"
+      />
+      <button class="restart_btn" onclick="startTimer(3)">Restart</button>
+    </div>
 
-<script src="game.js"></script>
-</body>
+    <script src="game.js"></script>
+  </body>
 </html>
