@@ -207,18 +207,6 @@ function startTimer(seconds) {
   }, 1000);
 }
 
-// if (!isGameStarting) {
-//   console.log("game isnt starting");
-//   document.addEventListener("keydown", function (event) {
-//     if ((event.code = 9)) {
-//       if (!isGameRunning) {
-//         console.log("the game is about to start");
-//         startTimer(3);
-//       }
-//     }
-//   });
-// }
-
 window.addEventListener("keydown", checkKeyPressed, false);
 
 function checkKeyPressed(evt) {

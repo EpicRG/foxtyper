@@ -1,107 +1,153 @@
-@font-face{font-family: 'Roboto Mono';src:url('fonts/RobotoMono-VariableFont_wght.ttf')}
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("fonts/RobotoMono-VariableFont_wght.ttf");
+}
 
 body {
-    background-color: #323437;
-    color: #f44c7f;
-    text-align: center;
-    font-family: 'Roboto Mono';
-    }
-    
-    .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    }
-    
-    .heading {
-    margin-bottom: 20px;
-    font-size: 3rem;
-    color: #f44c7f;
-    }
-    
-    .header {
-    display: flex;
-    align-items: center;
-    }
-    
-    .timer, .errors, .accuracy,
-    .cpm, .wpm {
-    background-color: #cbda4600;
-    height: 60px;
-    width: 70px;
-    margin: 8px;
-    padding: 12px;
-    border-radius: 20%;
-    /*box-shadow: black 5px 8px 5px;*/
-    }
-    
-    .cpm, .wpm {
-    display: none;
-    }
-    
-    .header_text {
-    text-transform: uppercase;
-    font-size: 0.6rem;
-    font-weight: 600;
-    }
-    
-    .curr_time, .curr_errors,
-    .curr_accuracy, .curr_cpm,
-    .curr_wpm {
-    font-size: 2.75rem;
-    }
-    
-    .quote {
-    background-color: #cbda4600;
-    color: #646669;
-    font-size: 1.5rem;
-    margin: 10px;
-    padding: 25px;
-    /*box-shadow: black 5px 8px 5px;*/
-    }
-    
-    .input_area {
-    background-color: #f5f5c600;
-    height: 80px;
-    width: 40%;
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin: 15px;
-    padding: 20px;
-    border: 0px;
-    border-radius: 10px;
-    opacity: 0%;
-    }
-    
-    .restart_btn {
-    display: none;
-    background-color: #f44c7f;
-    font-size: 1.5rem;
-    padding: 10px;
-    border: 0px;
-    font-family: 'Roboto Mono';
-    border-radius: 10px;
-    /*box-shadow: black 5px 8px 5px;*/
-    }
-    
-    .incorrect_char {
-    color: red;
-    text-decoration: underline;
-    }
-    
-    .correct_char {
-    color: #d1d0c5;
-    }
+  background-color: #323437;
+  color: #f44c7f;
+  text-align: center;
+  font-family: "Roboto Mono";
+}
 
-    #countdown {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        display: inline-block;
-        transform: translate(-50%, -50%);
-        transition: 1s;
-        font-size: 0vw;
-        opacity: 50%;
-        color: #040; 
-      }
-    
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  margin-bottom: 20px;
+  font-size: 3rem;
+  color: #f44c7f;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.timer,
+.errors,
+.accuracy,
+.cpm,
+.wpm {
+  background-color: #cbda4600;
+  height: 60px;
+  width: 70px;
+  margin: 8px;
+  padding: 12px;
+  border-radius: 20%;
+  /*box-shadow: black 5px 8px 5px;*/
+}
+
+.cpm,
+.wpm {
+  display: none;
+}
+
+.header_text {
+  text-transform: uppercase;
+  font-size: 0.6rem;
+  font-weight: 600;
+}
+
+.curr_time,
+.curr_errors,
+.curr_accuracy,
+.curr_cpm,
+.curr_wpm {
+  font-size: 2.75rem;
+}
+
+.quote {
+  background-color: #cbda4600;
+  color: #646669;
+  font-size: 1.5rem;
+  margin: 10px;
+  padding: 25px;
+}
+
+.input_area {
+  background-color: #f5f5c600;
+  height: 80px;
+  width: 40%;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 15px;
+  padding: 20px;
+  border: 0px;
+  border-radius: 10px;
+  opacity: 0%;
+}
+
+.restart_btn {
+  display: none;
+  background-color: #f44c7f;
+  font-size: 1.5rem;
+  padding: 10px;
+  border: 0px;
+  font-family: "Roboto Mono";
+  border-radius: 10px;
+}
+
+.incorrect_char {
+  color: red;
+  text-decoration: underline;
+}
+
+.correct_char {
+  color: #d1d0c5;
+}
+
+#countdown {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: inline-block;
+  transform: translate(-50%, -50%);
+  transition: 1s;
+  font-size: 0vw;
+  opacity: 50%;
+  color: #040;
+}
+
+.footer {
+  width: 100%;
+  height: auto;
+  padding: 1%;
+  position: fixed;
+  bottom: 0;
+}
+
+.repo-icon {
+  width: 16px;
+  height: 16px;
+  padding: 36px;
+  position: absolute;
+  right: 43%;
+  bottom: 0;
+}
+/* Child Text Container */
+.git-hover div {
+  position: absolute;
+  color: #646669;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+/* Hover on Parent Container */
+.git-hover:hover {
+  cursor: pointer;
+}
+
+.git-hover:hover div {
+  padding: 10px;
+  position: absolute;
+  right: 43.5%;
+  bottom: 2;
+  visibility: visible;
+  opacity: 1;
+}
