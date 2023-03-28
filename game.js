@@ -165,7 +165,7 @@ function finishGame() {
 
   input_area.disabled = true;
 
-  quote_text.textContent = "Click on rab or restart to start a new game.";
+  quote_text.textContent = "Click on tab or restart to start a new game.";
 
   restart_btn.style.display = "block";
 
