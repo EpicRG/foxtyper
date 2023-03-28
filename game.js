@@ -15,19 +15,19 @@ let words = [];
 
 // Fetch words from words.txt file
 fetch("src/words.txt")
-  .then(response => response.text())
-  .then(data => {
+  .then((response) => response.text())
+  .then((data) => {
     // Split data by ", " to get individual words
     words = data.split(",");
   })
-  .catch(error => {
+  .catch((error) => {
     console.error("Error fetching words:", error);
   });
 
-  // Get random word from words array
-  function getRandomWord() {
-    return words[Math.floor(Math.random() * words.length)];
-  }
+// Get random word from words array
+function getRandomWord() {
+  return words[Math.floor(Math.random() * words.length)];
+}
 
 // selecting required elements
 let timer_text = document.querySelector(".curr_time");
@@ -42,7 +42,7 @@ let cpm_group = document.querySelector(".cpm");
 let wpm_group = document.querySelector(".wpm");
 let error_group = document.querySelector(".errors");
 let accuracy_group = document.querySelector(".accuracy");
-let countdownTimer = document.querySelector(".countdownTimer")
+let countdownTimer = document.querySelector(".countdownTimer");
 
 let timeLeft = TIME_LIMIT;
 let timeElapsed = 0;
@@ -57,20 +57,8 @@ let isGameRunning = false;
 let isGameStarting = false;
 
 function updateQuote() {
-
-  // quote_text.textContent = null;
-  // current_quote = getRandomWord();
-
-  // // separate each character and make an element
-  // // out of each of them to individually style them
-  // current_quote.split("").forEach((char) => {
-  //   const charSpan = document.createElement("span");
-  //   charSpan.innerText = char;
-  //   quote_text.appendChild(charSpan);
-  // });
-
   quote_text.textContent = null;
-  
+
   let quoteWords = [];
   for (let i = 0; i < 5; i++) {
     quoteWords.push(getRandomWord());
@@ -103,11 +91,9 @@ function processCurrentText() {
     if (typedChar == null) {
       char.classList.remove("correct_char");
       char.classList.remove("incorrect_char");
-
     } else if (typedChar === char.innerText) {
       char.classList.add("correct_char");
       char.classList.remove("incorrect_char");
-
     } else {
       char.classList.add("incorrect_char");
       char.classList.remove("correct_char");
@@ -135,10 +121,9 @@ function startGame() {
   resetValues();
   updateQuote();
   isGameRunning = true;
-  
+
   clearInterval(timer);
   timer = setInterval(updateTimer, 1000);
-
 }
 
 function resetValues() {
@@ -166,7 +151,7 @@ function resetValues() {
 function updateTimer() {
   if (timeLeft > 0) {
     timeLeft--;
-
+    console.log(timeLeft);
     timeElapsed++;
 
     timer_text.textContent = timeLeft + "s";
@@ -176,7 +161,6 @@ function updateTimer() {
 }
 
 function finishGame() {
-
   clearInterval(timer);
 
   input_area.disabled = true;
@@ -197,7 +181,7 @@ function finishGame() {
   isGameRunning = false;
 }
 
-function startTimer(seconds){
+function startTimer(seconds) {
   isGameStarting = true;
   let counter = seconds;
 
@@ -205,31 +189,44 @@ function startTimer(seconds){
     console.log(counter);
     counter--;
 
-    if (counter < 0){
+    if (counter < 0) {
       clearInterval(interval);
-      console.log('start');
+      console.log("start");
       isGameStarting = false;
       startGame();
     }
 
-    const timerSpan = document.getElementById('countdownTimer');
+    const timerSpan = document.getElementById("countdownTimer");
     timerSpan.innerText = counter + 1;
-    if(counter == -1){
+    if (counter == -1) {
       timerSpan.innerText = "Start Typing!";
-      setTimeout(() => {timerSpan.innerText = "";}, 1000);
+      setTimeout(() => {
+        timerSpan.innerText = "";
+      }, 1000);
     }
-    
-
   }, 1000);
 }
 
-if (!isGameStarting){
-  document.addEventListener('keydown', function(event){
-  if(!isGameRunning){
-    if (event.code = 32){
-      console.log("Space has been pressed");
-      startTimer(3);
+// if (!isGameStarting) {
+//   console.log("game isnt starting");
+//   document.addEventListener("keydown", function (event) {
+//     if ((event.code = 9)) {
+//       if (!isGameRunning) {
+//         console.log("the game is about to start");
+//         startTimer(3);
+//       }
+//     }
+//   });
+// }
+
+window.addEventListener("keydown", checkKeyPressed, false);
+
+function checkKeyPressed(evt) {
+  if (evt.keyCode == "9") {
+    if (!isGameStarting) {
+      if (!isGameRunning) {
+        startTimer(3);
+      }
     }
   }
-    
-});}
+}
