@@ -14,6 +14,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 50vh;
 }
 
 .heading {
@@ -117,21 +119,19 @@ body {
 }
 
 .footer {
-  width: 100%;
   height: auto;
   padding: 1%;
   position: fixed;
   bottom: 0;
-  right: calc(50vw - 975px);
+  right: calc(50vw - 50px);
 }
 
 .repo-icon {
   width: 16px;
   height: 16px;
-  padding: 36px;
   position: fixed;
-  right: 43%;
-  bottom: 0;
+  right: calc(50vw - 60px);
+  bottom: 36px;
 }
 /* Child Text Container */
 .git-hover div {
