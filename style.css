@@ -91,6 +91,10 @@ body {
   border-radius: 10px;
 }
 
+.restart_btn:hover {
+  box-shadow: inset 0 0 0 50px #db3f6e;
+}
+
 .incorrect_char {
   color: red;
   text-decoration: underline;

@@ -60,7 +60,7 @@ function updateQuote() {
   quote_text.textContent = null;
 
   let quoteWords = [];
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 10; i++) {
     quoteWords.push(getRandomWord());
   }
   current_quote = quoteWords.join(" ");
