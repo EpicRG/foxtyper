@@ -63,6 +63,9 @@ function updateQuote() {
   for (let i = 0; i < 10; i++) {
     quoteWords.push(getRandomWord());
   }
+
+  quoteWords.push(getRandomWord() + " ");
+
   current_quote = quoteWords.join(" ");
 
   current_quote.split("").forEach((char) => {
