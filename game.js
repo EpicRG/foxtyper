@@ -173,7 +173,7 @@ function finishGame() {
   restart_btn.style.display = "block";
 
   cpm = Math.round((characterTyped / timeElapsed) * 60);
-  wpm = Math.round((characterTyped / 5 / timeElapsed) * 60);
+  wpm = Math.round(((characterTyped / 5 - errors) / timeElapsed) * 60);
 
   cpm_text.textContent = cpm;
   wpm_text.textContent = wpm;
